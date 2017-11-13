@@ -9,7 +9,7 @@ class DropBoxUtilsImpl implements DropBoxUtils {
     @Override
     boolean fetch(String accessToken, LazyFilesItem item) {
         DbxClientV2 client = new DbxClientV2(DropBoxHelper.config, accessToken)
-//        LazyFilesPlugin.logger.info "DropBox account: " + client.getAccountInfo().displayName
+        LazyFilesPlugin.logger.info "DropBox account: " + client.getAccountInfo().displayName
 
         FileOutputStream os = new FileOutputStream(item.local)
 
@@ -20,7 +20,7 @@ class DropBoxUtilsImpl implements DropBoxUtils {
                 throw new AssertionError("Couldn't fetch " + item.dropbox)
             }
 
-            LazyFilesPlugin.logger.info "Fetched: " + fetchedFile
+            LazyFilesPlugin.logger.info "Fetched: " + metadata
         } finally {
             os.close();
         }
@@ -44,7 +44,7 @@ class DropBoxUtilsImpl implements DropBoxUtils {
                 throw new AssertionError("Couldn't upload " + item.local)
             }
 
-            LazyFilesPlugin.logger.info "Uploaded: " + uploadedFile
+            LazyFilesPlugin.logger.info "Uploaded: " + metadata
         } finally {
             is.close();
         }
