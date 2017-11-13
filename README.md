@@ -24,7 +24,7 @@ Use your DropBox account for any of your goals!
     ```
     buildscript {
         dependencies {
-            classpath 'com.shamanland:lazy-files:0.1.2'
+            classpath 'com.shamanland:lazy-files:0.1.3'
         }
     }
     ```
