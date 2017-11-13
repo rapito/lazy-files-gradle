@@ -50,13 +50,13 @@ modifyPom {
     project {
         name 'Lazy Files'
         description 'Gradle plugin which fetch/upload files from/to DropBox.'
-        url 'https://github.com/shamanland/lazy-files-gradle'
+        url 'https://github.com/rapito/lazy-files-gradle'
         inceptionYear '2015'
 
         scm {
-            url 'https://github.com/shamanland/lazy-files-gradle'
-            connection 'scm:git:git://github.com/shamanland/lazy-files-gradle.git'
-            developerConnection 'scm:git:ssh://git@github.com/shamanland/lazy-files-gradle.git'
+            url 'https://github.com/rapito/lazy-files-gradle'
+            connection 'scm:git:git://github.com/rapito/lazy-files-gradle.git'
+            developerConnection 'scm:git:ssh://git@github.com/rapito/lazy-files-gradle.git'
         }
 
         licenses {

@@ -1,15 +1,14 @@
 package com.shamanland.lazyfiles.internal
 
-import com.dropbox.core.DbxClient
-import com.dropbox.core.DbxEntry
-import com.dropbox.core.DbxWriteMode
+import com.dropbox.core.v1.DbxClientV1
+import com.dropbox.core.v1.DbxEntry
 import com.shamanland.lazyfiles.LazyFilesItem
 import com.shamanland.lazyfiles.LazyFilesPlugin
 
 class DropBoxUtilsImpl implements DropBoxUtils {
     @Override
     boolean fetch(String accessToken, LazyFilesItem item) {
-        DbxClient client = new DbxClient(DropBoxHelper.config, accessToken)
+        DbxClientV1 client = new DbxClientV1(DropBoxHelper.config, accessToken)
         LazyFilesPlugin.logger.info "DropBox account: " + client.getAccountInfo().displayName
 
         FileOutputStream os = new FileOutputStream(item.local)
@@ -31,7 +30,7 @@ class DropBoxUtilsImpl implements DropBoxUtils {
 
     @Override
     boolean upload(String accessToken, LazyFilesItem item) {
-        DbxClient client = new DbxClient(DropBoxHelper.config, accessToken)
+        DbxClientV1 client = new DbxClientV1(DropBoxHelper.config, accessToken)
         LazyFilesPlugin.logger.info "DropBox account: " + client.getAccountInfo().displayName
 
         FileInputStream is = new FileInputStream(item.local)
